@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="description" content="Jayelite builds smart real estate tools: property matching, lead capture, WhatsApp follow-up and AI features for agents.">
+<meta name="color-scheme" content="dark">
+<title>Jayelite Real Estate Tools</title>
+<style>
+:root{--bg:#07111f;--panel:#0d1a2b;--line:#1d2b3e;--text:#fff;--muted:#9eacbd;--green:#4ade80;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial,Helvetica,sans-serif}
+html{scroll-behavior:smooth;scroll-padding-top:calc(80px + env(safe-area-inset-top,0px));background:var(--bg)}
+body{background:var(--bg);color:var(--text);line-height:1.6}
+a{text-decoration:none;color:inherit}
+nav{width:100%;padding:18px 7%;padding-top:calc(18px + env(safe-area-inset-top,0px));display:flex;justify-content:space-between;align-items:center;background:rgba(7,17,31,.96);position:fixed;top:0;left:0;z-index:1000;border-bottom:1px solid rgba(255,255,255,.08)}
+.logo{font-size:22px;font-weight:800;color:var(--green)}
+.nav-btn{background:var(--green);color:#06130a;padding:10px 17px;border-radius:8px;font-weight:700;font-size:14px}
+.hero{min-height:100vh;padding:150px 7% 80px;display:flex;align-items:center;background:radial-gradient(circle at 80% 20%,rgba(74,222,128,.15),transparent 30%),radial-gradient(circle at 20% 80%,rgba(59,130,246,.12),transparent 30%)}
+.hero-content{max-width:850px}
+.badge{display:inline-block;padding:7px 13px;border:1px solid rgba(74,222,128,.4);color:var(--green);border-radius:30px;font-size:13px;margin-bottom:20px;background:rgba(74,222,128,.06)}
+h1{font-size:clamp(38px,8vw,78px);line-height:1.05;margin-bottom:25px;letter-spacing:-2px}
+h1 span{color:var(--green)}
+.hero p{max-width:650px;color:#b8c4d4;font-size:18px;margin-bottom:30px}
+.buttons{display:flex;gap:12px;flex-wrap:wrap}
+.primary-btn,.secondary-btn{padding:14px 22px;border-radius:9px;font-weight:700;cursor:pointer;border:none;font-size:15px;display:inline-block;text-align:center}
+.primary-btn{background:var(--green);color:#06130a}
+.secondary-btn{background:transparent;border:1px solid #344257;color:#fff}
+section{padding:90px 7%}
+.section-title{text-align:center;max-width:700px;margin:0 auto 50px}
+.section-title h2{font-size:38px;margin-bottom:12px}
+.section-title p{color:#9eacbd}
+.features{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;max-width:1100px;margin:auto}
+.card{background:var(--panel);border:1px solid var(--line);padding:28px;border-radius:15px;transition:.3s}
+.card:hover{transform:translateY(-6px);border-color:var(--green)}
+.icon{width:48px;height:48px;border-radius:10px;display:flex;align-items:center;justify-content:center;background:rgba(74,222,128,.1);font-size:22px;margin-bottom:20px}
+.card h3{margin-bottom:10px;font-size:20px}.card p{color:var(--muted);font-size:15px}
+.demo{background:#0a1626}
+.demo-box,.matcher{max-width:1000px;margin:auto;background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:35px}
+.demo-box h3,.matcher h3{font-size:25px;margin-bottom:10px}
+.demo-box>p,.matcher>p{color:var(--muted);margin-bottom:25px}
+.demo-form{display:grid;grid-template-columns:1fr 1fr;gap:15px}
+input,select{width:100%;padding:14px;background:var(--bg);border:1px solid #2a3a50;border-radius:8px;color:#fff;outline:none;font-size:16px}
+input:focus,select:focus{border-color:var(--green)}
+.full{grid-column:1/-1}
+.budget-row{display:flex;gap:12px;margin-bottom:12px}.budget-row input{flex:1}
+.msg{min-height:22px;font-size:14px;color:#f5b942;margin-bottom:10px}
+.property-results{display:grid;grid-template-columns:repeat(3,1fr);gap:15px;margin-top:20px}
+.property{background:var(--bg);border:1px solid #223249;border-radius:12px;padding:20px}
+.property h4{margin-bottom:8px}.property .price{color:var(--green);font-weight:bold;margin-bottom:8px}.property small{color:#8998aa}
+#results{display:none}.note{color:#8998aa;font-size:12px;margin-top:14px}
+.cta{text-align:center;background:radial-gradient(circle at center,rgba(74,222,128,.12),transparent 45%)}
+.cta h2{font-size:42px;margin-bottom:15px}.cta p{color:var(--muted);max-width:600px;margin:0 auto 25px}
+footer{border-top:1px solid var(--line);padding:35px 7%;text-align:center;color:#7f8da0;font-size:14px}footer strong{color:var(--green)}
+.wa-float{position:fixed;right:18px;bottom:calc(18px + env(safe-area-inset-bottom,0px));background:#25d366;color:#06130a;font-weight:700;padding:13px 18px;border-radius:30px;z-index:900;box-shadow:0 6px 20px rgba(0,0,0,.4);font-size:14px}
+@media(max-width:800px){.features,.property-results,.demo-form{grid-template-columns:1fr}.full{grid-column:auto}.budget-row{flex-direction:column}h1{letter-spacing:-1px}.cta h2{font-size:32px}.section-title h2{font-size:30px}}
+</style>
+</head>
+<body>
+<nav><div class="logo">JAYELITE</div><a href="#contact" class="nav-btn">Get Started</a></nav>
+
+<section class="hero"><div class="hero-content">
+<div class="badge">REAL ESTATE • AI • AUTOMATION</div>
+<h1>Turn Property Searches Into <span>Qualified Buyers.</span></h1>
+<p>Jayelite builds smart real estate tools that help agents match buyers with suitable properties, capture serious inquiries, and move leads directly into their sales process.</p>
+<div class="buttons"><a href="#matcher" class="primary-btn">Try Property Matcher</a><a href="#contact" class="secondary-btn">Request a Demo</a></div>
+</div></section>
+
+<section>
+<div class="section-title"><h2>Built For Real Estate Agents</h2><p>Stop relying only on social media posts and manual property searches. Give your buyers a faster way to find what fits their budget.</p></div>
+<div class="features">
+<div class="card"><div class="icon">🏠</div><h3>Property Matching</h3><p>Buyers enter their budget and the tool shows the properties from your list that fit it.</p></div>
+<div class="card"><div class="icon">🎯</div><h3>Qualified Leads</h3><p>Capture interested buyers instead of receiving random inquiries with no clear buying intent.</p></div>
+<div class="card"><div class="icon">💬</div><h3>WhatsApp Follow-up</h3><p>Interested buyers can send their details straight to the agent on WhatsApp.</p></div>
+<div class="card"><div class="icon">🤖</div><h3>AI Features</h3><p>Add AI features that help answer buyer questions, suggest properties and assist with lead handling.</p></div>
+<div class="card"><div class="icon">📊</div><h3>Lead Management</h3><p>Organize inquiries and make it easier to follow up with potential buyers.</p></div>
+<div class="card"><div class="icon">⚡</div><h3>Custom Built</h3><p>Your tool can be built around your properties, brand, location and sales process.</p></div>
+</div></section>
+
+<section id="matcher" class="demo">
+<div class="section-title"><h2>See How Property Matching Works</h2><p>A simple example of how your buyers could search for properties based on their budget.</p></div>
+<div class="matcher">
+<h3>Find Properties Within Your Budget</h3>
+<p>Enter a budget in Naira to see matching properties.</p>
+<div class="budget-row"><input type="number" inputmode="numeric" id="budget" placeholder="Enter budget e.g. 50000000"><button class="primary-btn" onclick="findProperties()">Find Properties</button></div>
+<div class="msg" id="budgetMsg"></div>
+<div id="results"><h3 id="resultsTitle">Matching Properties</h3><div class="property-results" id="resultsList"></div></div>
+<p class="note">Demo with sample listings. Your own tool would show your real properties.</p>
+</div></section>
+
+<section id="contact">
+<div class="section-title"><h2>Want One For Your Real Estate Business?</h2><p>Tell us a little about your business and we'll show you how a custom property tool could work for you.</p></div>
+<div class="demo-box">
+<h3>Request a Demo</h3>
+<p>Submit your details and contact Jayelite directly on WhatsApp.</p>
+<div class="demo-form">
+<input type="text" id="name" placeholder="Your name" autocomplete="name">
+<input type="text" id="business" placeholder="Agency / Business name">
+<input type="tel" id="phone" placeholder="Phone / WhatsApp number" autocomplete="tel">
+<select id="service"><option value="">What are you interested in?</option><option>Property Matching Tool</option><option>AI Real Estate Tool</option><option>Custom Real Estate Website</option><option>Other Business Tool</option></select>
+<div class="msg full" id="formMsg"></div>
+<button class="primary-btn full" onclick="sendWhatsApp()">Request Demo on WhatsApp</button>
+</div></div></section>
+
+<section class="cta">
+<h2>Make Property Buying Easier.</h2>
+<p>Give your buyers a smarter way to discover properties while giving your agency a better way to capture and manage potential customers.</p>
+<a href="#contact" class="primary-btn">Build My Real Estate Tool</a>
+</section>
+
+<footer>
+<p>© <span id="year"></span> <strong>Jayelite</strong>. Web Tools • AI Automation • Business Technology</p>
+<p style="margin-top:8px">WhatsApp: +2348135944072 • Email: jayelite15@gmail.com</p>
+</footer>
+
+<a class="wa-float" id="waFloat" target="_blank" rel="noopener" href="https://wa.me/2348135944072?text=Hello%20Jason%2C%20I%27m%20interested%20in%20a%20Jayelite%20real%20estate%20tool.">💬 Chat on WhatsApp</a>
+
+<script>
+var WA="2348135944072";
+var LISTINGS=[
+{n:"Self-contained Studio Apartment",p:12000000,i:"Yaba • 1 Bedroom • 1 Bathroom"},
+{n:"2 Bedroom Flat",p:25000000,i:"Surulere • 2 Bedrooms • 2 Bathrooms"},
+{n:"Residential Land",p:35000000,i:"Sangotedo • 600sqm"},
+{n:"Modern 3 Bedroom House",p:45000000,i:"Lekki • 3 Bedrooms • 4 Bathrooms"},
+{n:"4 Bedroom Detached Duplex",p:50000000,i:"Ajah • 4 Bedrooms • 5 Bathrooms"},
+{n:"5 Bedroom Smart Duplex",p:120000000,i:"Ikoyi • 5 Bedrooms • 6 Bathrooms"}];
+function $(i){return document.getElementById(i)}
+function findProperties(){
+var b=Number($("budget").value),m=$("budgetMsg"),r=$("results"),l=$("resultsList");
+if(!b||b<=0){m.textContent="Please enter a valid budget.";r.style.display="none";return}
+m.textContent="";
+var hit=LISTINGS.filter(function(x){return x.p<=b}).sort(function(a,c){return c.p-a.p}).slice(0,3);
+l.innerHTML="";
+hit.forEach(function(x){var d=document.createElement("div");d.className="property";
+var h=document.createElement("h4");h.textContent=x.n;
+var p=document.createElement("div");p.className="price";p.textContent="₦"+x.p.toLocaleString("en-US");
+var s=document.createElement("small");s.textContent=x.i;
+d.appendChild(h);d.appendChild(p);d.appendChild(s);l.appendChild(d)});
+$("resultsTitle").textContent=hit.length?"Matching Properties":"No sample listings within ₦"+b.toLocaleString("en-US");
+if(!hit.length)m.textContent="Try a higher budget. Your own tool would search your real listings.";
+r.style.display="block";r.scrollIntoView({behavior:"smooth",block:"nearest"})}
+function sendWhatsApp(){
+var name=$("name").value.trim(),biz=$("business").value.trim(),phone=$("phone").value.trim(),svc=$("service").value,m=$("formMsg");
+if(!name||!phone||!svc){m.textContent="Please enter your name, WhatsApp number and choose a service.";return}
+if(phone.replace(/\D/g,"").length<7){m.textContent="Please enter a valid phone number.";return}
+m.textContent="";
+var msg="Hello Jason, I'm interested in a Jayelite real estate tool.\n\nName: "+name+"\nBusiness: "+(biz||"Not provided")+"\nPhone: "+phone+"\nService: "+svc+"\n\nI would like to learn more about how it can help my real estate business.";
+window.location.href="https://wa.me/"+WA+"?text="+encodeURIComponent(msg)}
+$("year").textContent=new Date().getFullYear();
+</script>
+</body>
+</html>
